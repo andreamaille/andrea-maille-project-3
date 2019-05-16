@@ -1,0 +1,33 @@
+@import "setup"; 
+@import "variables";
+@import "typography";
+
+header {
+    width:100%;
+    height:100vh;
+    background-color: lightseagreen;
+}
+
+.wrapper {
+    width:90%;
+    max-width: 1440px;
+    margin: 0 auto;
+}
+
+.section--question {
+    display: flex;
+    flex-direction: row;
+        .question-image {
+            width:50%;
+            height:400px;
+            background-color: lightcoral;
+        }
+        .question-details {
+            width:50%;
+        }
+}
+
+.submitAnswers {
+    padding-top:500px;
+}
+

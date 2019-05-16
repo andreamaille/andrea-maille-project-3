@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>What's for Dinner?</title>
+    <link href="https://fonts.googleapis.com/css?family=Abril+Fatface|Lato" rel="stylesheet">
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+    <header>
+        <div class="wrapper header-content">
+            <h1>What's for Dinner?</h1>
+            <div class="quiz-description">
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Maxime modi molestias ipsam assumenda quam reprehenderit adipisci quae inventore? A veritatis sunt nostrum, quas temporibus voluptate nulla, quia neque officiis obcaecati, nobis esse debitis accusamus aliquid odio molestias itaque dolor quam!</p>
+                <a href="#question">
+                    Start
+                </a>
+            </div>
+        </div>
+    </header>
+    
+    <main>
+        <section id="question">
+            <div class="wrapper">
+                <div class="section--question question-protein">
+                    <div class="question-image protein-image"></div>
+                    <div class="question-details">
+                        <form action="">
+                            <fieldset class="form-protein">
+                                <p>Choose your protein</p>
+                                <label for="meat">Meat</label>
+                                <input type="radio" name="protein" id="meat" value="meat">
+        
+                                <label for="meat">Vegetarian</label>
+                                <input type="radio" name="protein" id="vegetarian" value="vegetarian">
+        
+                                <label for="meat">Fish</label>
+                                <input type="radio" name="protein" id="fish" value="fish">
+                            </fieldset>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    
+        <section id="question-2">
+            <div class="wrapper">
+                <div class="section--question question-cook-time">
+                    <div class="question-image cook-time-image"></div>
+                    <div class="question-details">
+                        <form action="">
+                            <fieldset class="cook-time">
+                                <p>Choose your protein</p>
+                                <label for="under-30-minutes">Under 30 Minutes</label>
+                                <input type="radio" name="cook-time" id="under-30-minutes" value="under-30-minutes">
+                    
+                                <label for="around-an-hour">Around an Hour</label>
+                                <input type="radio" name="cook-time" id="around-an-hour" value="around-an-hour">
+                    
+                                <label for="long-cook-time">All the time in the world</label>
+                                <input type="radio" name="cook-time" id="long-cook-time" value="long-cook-time">
+                            </fieldset>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="submitAnswers" class="submitAnswers">
+            <div class="wrapper">
+                <div class="submit">
+                    <input type="submit" value="Make me Dinner!" name="submit-form" class="submit-form">
+                </div>
+            </div>
+        </section>
+        
+        <section>
+            <div class="wrapper">
+                <ul class="results" id="results">
+                    <!-- Result section will be dynamically added with JavaScript -->
+                </ul>
+            </div>
+        </section>
+        
+    </main>
+
+    <script src='https://code.jquery.com/jquery-3.2.1.min.js' integrity='sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4='crossorigin='anonymous'></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-smooth-scroll/2.1.2/jquery.smooth-scroll.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
