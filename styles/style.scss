@@ -2,32 +2,153 @@
 @import "variables";
 @import "typography";
 
-header {
-    width:100%;
-    height:100vh;
-    background-color: lightseagreen;
-}
-
 .wrapper {
-    width:90%;
+    width:80%;
     max-width: 1440px;
     margin: 0 auto;
 }
 
+img {
+    width:100%;
+    max-width:100%;
+}
+// Header Styles 
+
+header {
+    height:100vh;
+    width:100%;
+    background:url(../assets/header-image.png) 15% / contain no-repeat $white;
+}
+
+.header-content {
+    display: flex;
+    justify-content: flex-end;
+
+    .header-text {
+        width:50%;
+        margin:50px;
+        padding:50px;
+        border:$border;
+    }
+
+    .start-quiz {
+        background-color: $black;
+        width:35%;
+        padding:15px;
+        margin-top:25px;
+        display: block;
+        transition: background 1s ease;
+        &:hover {
+            background-color: $primaryColor;
+        }
+    
+        &:focus,
+        &:active{
+            background-color:$secondaryColor;
+        }
+    }
+}
+
+// Section - Question Styles 
+section {
+    padding:75px 0;
+}
+
 .section--question {
     display: flex;
+    .question-details,
+    .question-image {
+        width:50%;
+    }
+}
+
+.question-protein {
+    flex-direction: row-reverse;
+}
+
+.question-cook-time {
     flex-direction: row;
-        .question-image {
-            width:50%;
-            height:400px;
-            background-color: lightcoral;
-        }
-        .question-details {
-            width:50%;
-        }
 }
 
-.submitAnswers {
-    padding-top:500px;
+.question-image {
+    height:400px;
 }
 
+.protein-image {
+    background:url(../assets/pizza.png) center /contain no-repeat $white;
+}
+
+.cook-time-image {
+    background:url(../assets/kitchen-utensils.png) center /contain no-repeat $white;
+}
+
+// Form Styles
+
+fieldset {
+    border: $border;
+    @include alignment (column, center, center, center);
+    input[type=radio] {
+        opacity: 0;
+        position: absolute;
+        &:checked + label {
+            background-color:$secondaryColor;
+        }
+    }
+    label {
+        color:$white;
+        background-color:$black;
+        width:75%;
+        margin:10px 0 5px 0;
+        padding:25px;
+        text-transform: uppercase;
+        &:hover {
+            background-color:$primaryColor;
+        }
+        &:focus,
+        &:active{
+            background-color:$secondaryColor;
+        }
+    }
+}
+
+// .section--submit {
+//     background:lightseagreen;
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+// }
+
+.submit-form,
+.next {
+    text-transform: uppercase;
+    background-color:$white;
+    border: $border;
+    margin:10px 0;
+    padding: 10px 25px;
+    &:focus,
+    &:active,
+    &:hover {
+        color: $white;
+        background-color: $black;
+    }
+}
+
+.submit-image {
+    width:100%;
+    height:400px;
+    background:url(../assets/pots-and-pans.png) center /contain no-repeat $white;
+}
+
+.submit-form{
+    width:100%;
+}
+
+.results {
+    width:100%;
+    text-align:center;
+}
+
+.result-image {
+    width:50%;
+    height:300px;
+}

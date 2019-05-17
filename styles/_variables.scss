@@ -1,3 +1,14 @@
-body {
-    background-color: red;
+$primaryColor: #d0973e;
+$secondaryColor: #a05543;
+$black:#171814;
+$white:#fefefe;
+
+$border: 4px solid $black;
+
+@mixin alignment ($flex-direction, $justify-content, $align-items, $text-align) {
+    display: flex;
+    flex-direction: $flex-direction;
+    justify-content: $justify-content;
+    align-items: $align-items;
+    text-align: $text-align;
 }

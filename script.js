@@ -5,7 +5,8 @@ const recipeApp = {};
         meat: [
             {
                 name: 'Meat Pasta',
-                cookTime: 'under-30-minutes'
+                cookTime: 'under-30-minutes',
+                image: 'assets/enchiladas.jpg'
             },
             {
                 name: 'Meat Burgers',
@@ -52,6 +53,7 @@ const recipeApp = {};
     recipeApp.displayRecipe = function() {
         $('.submit-form').on('click', function(event){
             event.preventDefault();
+
             // store the users protein choice
             const protein = $('input[name=protein]:checked').val();
             // store the users cook time choice 
@@ -59,8 +61,7 @@ const recipeApp = {};
             
             // Creates an array with options for user's preferred protein
             const preference = recipeApp.recipeSuggestions[protein];
-            // console.log(preference)
-        
+ 
             // stores recipe options based on user input
             const userRecipes = [];
         
@@ -75,12 +76,21 @@ const recipeApp = {};
                 }
             }
             // prints result to page
-            $('.results').html(`<h2>${userRecipes[0].name}</h2>`)
+            userRecipes.forEach(item => {
+                const $name = $(`<h2>${userRecipes[0].name}</h2>`);
+                const $image = $('<img>').attr('src', userRecipes[0].image);
+                $('.results').append($name);
+                $('.result-image').append($image)
+            })
+
         })
     }
 
+    // EMPTY VALUE TO CLEAR QUIZ
+
+
     recipeApp.smoothScroll = function() {
-        $('a').smoothScroll({
+        $('.start-quiz').smoothScroll({
             autoFocus: false,
             easing: 'swing',
             speed: '400',
@@ -90,14 +100,16 @@ const recipeApp = {};
     // ! Group these functions with parameters
     recipeApp.scrollOnRadio = function() {
         // on click of an input with the name of "protein", scroll down to the element with an id of #question-2
-        $('input[name="protein"]').on('click', function(event){
+        $('input[name="next"]').on('click', function(event){
+            event.preventDefault();
             $('html, body').animate({
                 scrollTop: $("#question-2").offset().top - 20
             }, 1000);
         })
         // on click of an input with the name of "cook-time"", scroll down to the element with an id of #submitAnswers
-        $('input[name="cook-time"]').on('click', function (event) {
+        $('input[name="next2"]').on('click', function (event) {
             // scrolls to the submit button
+            event.preventDefault();
             $('html, body').animate({
                 scrollTop: $("#submitAnswers").offset().top - 20
             }, 1000);
@@ -110,6 +122,9 @@ const recipeApp = {};
             }, 1000);
         })
     }
+
+
+
 
     recipeApp.init = function(){
         recipeApp.displayRecipe();
