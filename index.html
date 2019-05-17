@@ -76,19 +76,25 @@
         <section id="submitAnswers" class="submitAnswers">
             <div class="wrapper">
                 <div class="section--submit">
-                    <input type="submit" value="Make me Dinner!" name="submit-form" class="submit-form">
+                    <input type="submit" value="Make me Dinner!" name="submit-form" class="submit-form" id="submit-form">
                     <div class="submit-image"></div>
                 </div>
             </div>
         </section>
         <img src="" alt="">
-        <section>
+        <!-- Result section will be dynamically added with JavaScript -->
+        <section id="user-recipe-result" class="section-recipe-results hide">
             <div class="wrapper">
-                <div class="results" id="results">
-                    <!-- Result section will be dynamically added with JavaScript -->
-                </div>
-                <div class="result-image">
-                    
+                <div class="recipe-title"></div>
+                <div class="result-recipe">
+                    <div class="recipe-image"></div>
+                    <div class="recipe-details">
+                        <p>Ingredients</p>
+                        <ul class="list-ingredients">
+                        </ul>
+                        <ol class="recipe-directions"></ol>
+                        <div class="recipe-credit"></div>
+                    </div>
                 </div>
             </div>
         </section>

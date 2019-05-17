@@ -32,6 +32,9 @@ header {
     }
 
     .start-quiz {
+        color:$white;
+        text-align: center;
+        text-transform: uppercase;
         background-color: $black;
         width:35%;
         padding:15px;
@@ -141,14 +144,33 @@ fieldset {
 
 .submit-form{
     width:100%;
+    padding:50px;
+    font-size:40px;
 }
 
-.results {
-    width:100%;
-    text-align:center;
+.recipe-title {
+    padding:25px 0;
+    margin:20px 0;
+    text-align: center;
+    border: $border;
 }
 
-.result-image {
-    width:50%;
-    height:300px;
+
+.result-recipe {
+    display: flex;
+    flex-direction: row;
+    .recipe-image {
+        width: calc(50% - 15px);
+        margin-right:15px;
+    }  
+    .recipe-details {
+        width: 50%;
+        padding:25px;
+        border:$border;
+    }
+    
+}
+
+.hide {
+    display: none;
 }
