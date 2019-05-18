@@ -75,26 +75,42 @@ const recipeApp = {};
     recipeApp.displayRecipe = function() {
         $('.submit-form').on('click', function(event){
             event.preventDefault();
-
             // store the users protein choice
             const protein = $('input[name=protein]:checked').val();
             // store the users cook time choice 
             const cookTime = $('input[name=cook-time]:checked').val();
-
             // Error Handling 
             let answerAllQuestions = true;
             
+            //Error handling when user does not make selection
             if (protein === undefined || cookTime === undefined){
-                console.log(`you didnt answer`);
                 answerAllQuestions = false;
-                return;
+                $('.section-recipe-results').removeClass('hide');
+                $('.recipe-title').addClass('hide');
+                $('.result-recipe').addClass('hide');
+                $('.error-message').removeClass('hide');
             }
+
+
+            // $('.error-restart').on('click', function () {
+            //     $('.section-recipe-results').empty();
+            //     recipeApp.displayRecipe.reset();
+            //     $('.section-recipe-results').removeClass('hide');
+            // })
+            
+            $('.error-restart').click(function () {
+                // first add id tag to url
+                location.hash = '#question-protein';
+                // then reload the page
+                location.reload(true);
+            }); 
+
+            
 
             if (answerAllQuestions === true){
                 const preference = recipeApp.recipeSuggestions[protein];
                 // stores recipe options based on user input
                 const userRecipes = [];
-                console.log(userRecipes)
                 // loop through user's preferred protein array 
                 // looks for cook time that matches preference
                 for (let i = 0; i < preference.length; i = i + 1) {
@@ -141,13 +157,11 @@ const recipeApp = {};
             // Creates an array with options for user's preferred protein
 
             // stores the user recipe that matches user preferences 
-
-
+            
         })
     }
 
     // EMPTY VALUE TO CLEAR
-
     recipeApp.smoothScroll = function() {
         $('.start-quiz').smoothScroll({
             autoFocus: false,
@@ -168,6 +182,7 @@ const recipeApp = {};
         scrollDown(`input[name = "next"]`,`#question-2`);
         scrollDown(`input[name = "next2"]`, `#submitAnswers`);
         scrollDown(`input[name = "submit-form"]`, `#user-recipe-result`);
+        
     },
 
 

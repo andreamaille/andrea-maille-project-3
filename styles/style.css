@@ -180,6 +180,18 @@ body {
   font-size: 1rem;
   font-family: 'Lato', sans-serif; }
 
+.error-message p:first-child {
+  font-size: 120px;
+  font-size: 6rem;
+  font-family: 'Abril Fatface', cursive;
+  color: #171814;
+  text-transform: capitalize; }
+
+.error-message p {
+  font-size: 20px;
+  font-size: 1rem;
+  font-family: 'Lato', sans-serif; }
+
 .wrapper {
   width: 80%;
   max-width: 1440px;
@@ -312,7 +324,8 @@ fieldset {
   padding: 50px;
   font-size: 40px; }
 
-.recipe-title {
+.recipe-title,
+.error-message {
   padding: 25px 0;
   margin: 20px 0;
   text-align: center;
@@ -336,3 +349,16 @@ fieldset {
 
 .hide {
   display: none; }
+
+.error-restart {
+  color: #fefefe;
+  background-color: #d0973e;
+  display: inline-block;
+  padding: 15px;
+  margin-top: 25px; }
+  .error-restart:hover {
+    background-color: #a05543; }
+
+.error-image {
+  width: 25%;
+  background: url(../assets/cheese-plate.png) center/contain no-repeat #fefefe; }

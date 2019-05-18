@@ -42,3 +42,12 @@ h2 {
 body {
    @include bodyFont (20);
 }
+
+.error-message  {
+    p:first-child {
+        @include mainFont (120);
+    }
+    p {
+       @include bodyFont (20); 
+    }
+}

@@ -148,7 +148,8 @@ fieldset {
     font-size:40px;
 }
 
-.recipe-title {
+.recipe-title,
+.error-message {
     padding:25px 0;
     margin:20px 0;
     text-align: center;
@@ -168,9 +169,24 @@ fieldset {
         padding:25px;
         border:$border;
     }
-    
 }
 
 .hide {
     display: none;
+}
+
+.error-restart {
+    color: $white;
+    background-color:$primaryColor;
+    display: inline-block;
+    padding:15px;
+    margin-top:25px;
+    &:hover {
+        background-color:$secondaryColor;
+    }
+}
+
+.error-image {
+    width:25%;
+    background:url(../assets/cheese-plate.png) center /contain no-repeat $white;
 }
