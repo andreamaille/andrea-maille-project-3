@@ -358,7 +358,3 @@ fieldset {
   margin-top: 25px; }
   .error-restart:hover {
     background-color: #a05543; }
-
-.error-image {
-  width: 25%;
-  background: url(../assets/cheese-plate.png) center/contain no-repeat #fefefe; }

@@ -79,10 +79,11 @@ const recipeApp = {};
             const protein = $('input[name=protein]:checked').val();
             // store the users cook time choice 
             const cookTime = $('input[name=cook-time]:checked').val();
+            
             // Error Handling 
             let answerAllQuestions = true;
             
-            //Error handling when user does not make selection
+            //Error handling when user does not answer a question
             if (protein === undefined || cookTime === undefined){
                 answerAllQuestions = false;
                 $('.section-recipe-results').removeClass('hide');
@@ -90,13 +91,6 @@ const recipeApp = {};
                 $('.result-recipe').addClass('hide');
                 $('.error-message').removeClass('hide');
             }
-
-
-            // $('.error-restart').on('click', function () {
-            //     $('.section-recipe-results').empty();
-            //     recipeApp.displayRecipe.reset();
-            //     $('.section-recipe-results').removeClass('hide');
-            // })
             
             $('.error-restart').click(function () {
                 // first add id tag to url
@@ -104,9 +98,7 @@ const recipeApp = {};
                 // then reload the page
                 location.reload(true);
             }); 
-
             
-
             if (answerAllQuestions === true){
                 const preference = recipeApp.recipeSuggestions[protein];
                 // stores recipe options based on user input

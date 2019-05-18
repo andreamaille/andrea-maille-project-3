@@ -48,6 +48,6 @@ body {
         @include mainFont (120);
     }
     p {
-       @include bodyFont (20); 
+    @include bodyFont (20); 
     }
 }
