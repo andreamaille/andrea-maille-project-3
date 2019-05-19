@@ -1,0 +1,47 @@
+// Buttons and Links 
+.start-quiz {
+    @include colors ($white, $black);
+    width:35%;
+    padding:15px;
+    margin-top:25px;
+    display: block;
+    transition: background 1s ease;
+    &:hover {
+        background-color: $primaryColor;
+    }
+    &:focus,
+    &:active{
+        background-color:$secondaryColor;
+    }
+}
+
+.submit-form,
+.next {
+    background-color:$white;
+    border: $border;
+    margin:10px 0;
+    &:focus,
+    &:active,
+    &:hover {
+        @include colors ($white, $black);
+    }
+}
+
+.submit-form{
+    width:100%;
+    padding:50px;
+}
+
+.next {
+    padding: 10px 25px;
+}
+
+.error-restart {
+    @include colors ($white, $primaryColor);
+    display: inline-block;
+    padding:15px;
+    margin-top:25px;
+    &:hover {
+        background-color:$secondaryColor;
+    }
+}

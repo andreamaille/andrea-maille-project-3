@@ -298,9 +298,10 @@ const recipeApp = {};
             //Error handling when user does not answer a question
             if (protein === undefined || cookTime === undefined){
                 answerAllQuestions = false;
-                $('.section-recipe-results').removeClass('hide');
+                $('.section--user-results').removeClass('hide');
                 $('.recipe-title').addClass('hide');
-                $('.result-recipe').addClass('hide');
+                $('.recipe-aside').addClass('hide');
+                $('.recipe-details').addClass('hide');
                 $('.error-message').removeClass('hide');
             }
             
@@ -330,7 +331,8 @@ const recipeApp = {};
 
                 // print to page . . .
                 const $name = $(`<h2>${recipe.name}</h2>`);
-                const $image = $(`<img>`).attr('src', recipe.image);
+                // these images are purely decorative so no alt text.
+                const $image = $(`<img class='result-recipe-image'>`).attr('src', recipe.image);
                 const $recipeSource = $(`<p>Read more about this recipe <a href="${recipe.recipeSource}">here</a></p>`);
 
                 $('.recipe-title').empty();
@@ -344,31 +346,24 @@ const recipeApp = {};
 
                 // printing arrays to the page
                 $('.list-ingredients').empty();
-                
+
                 const recipeIngredients = recipe.ingredients;
                 recipeIngredients.forEach(ingredient => {
                     const $ingredient = $(`<li>${ingredient}</li>`);
                     $('.list-ingredients').append($ingredient);
                 })
-
                 $('.recipe-directions').empty();
-
                 const recipeDirections = recipe.directions;
                 recipeDirections.forEach(direction => {
                     const $direction = $(`<li>${direction}</li>`);
                     $('.recipe-directions').append($direction);
                 })
                 
-                $('.section-recipe-results').removeClass('hide');
+                $('.section--user-results').removeClass('hide');
             }
-            // Creates an array with options for user's preferred protein
-
-            // stores the user recipe that matches user preferences 
             
         })
     }
-
-    // EMPTY VALUE TO CLEAR
     recipeApp.smoothScroll = function() {
         $('.start-quiz').smoothScroll({
             autoFocus: false,
@@ -388,11 +383,9 @@ const recipeApp = {};
         }
         scrollDown(`input[name = "next"]`,`#question-2`);
         scrollDown(`input[name = "next2"]`, `#submitAnswers`);
-        scrollDown(`input[name = "submit-form"]`, `#user-recipe-result`);
+        scrollDown(`input[name = "submit-form"]`, `#user-results`);
         
     },
-
-
 
     recipeApp.init = function(){
         recipeApp.displayRecipe();

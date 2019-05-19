@@ -16,15 +16,13 @@ html {
     font-family: 'Lato', sans-serif;
 }
 
+body {
+    @include bodyFont (20);
+}
+
 a {
     color:$black;
     text-decoration: none;
-}
-
-p,
-h2 {
-    margin:0;
-    padding:0;
 }
 
 h1 {
@@ -39,15 +37,44 @@ h2 {
     line-height:1.2;
 }
 
-body {
-   @include bodyFont (20);
+p,
+h2 {
+    margin:0;
+    padding:0;
+}
+
+.submit-form,
+.next,
+.start-quiz,
+label {
+    text-transform: uppercase;
+}
+
+.submit-form{
+    @include bodyFont (40); 
+}
+
+.aside-title {
+    @include mainFont (40);
 }
 
 .error-message  {
     p:first-child {
-        @include mainFont (120);
+    @include mainFont (120);
     }
     p {
     @include bodyFont (20); 
     }
+}
+
+footer p {
+    @include bodyFont (12); 
+    color:$white;
+    text-align: center;
+}
+
+
+
+.start-quiz {
+    text-align: center;
 }

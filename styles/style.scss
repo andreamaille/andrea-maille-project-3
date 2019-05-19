@@ -1,7 +1,9 @@
 @import "setup"; 
 @import "variables";
 @import "typography";
+@import "buttons";
 
+// General Styles 
 .wrapper {
     width:80%;
     max-width: 1440px;
@@ -12,68 +14,46 @@ img {
     width:100%;
     max-width:100%;
 }
-// Header Styles 
 
-header {
-    height:100vh;
-    width:100%;
-    background:url(../assets/header-image.png) 15% / contain no-repeat $white;
-}
-
-.header-content {
-    display: flex;
-    justify-content: flex-end;
-
-    .header-text {
-        width:50%;
-        margin:50px;
-        padding:50px;
-        border:$border;
-    }
-
-    .start-quiz {
-        color:$white;
-        text-align: center;
-        text-transform: uppercase;
-        background-color: $black;
-        width:35%;
-        padding:15px;
-        margin-top:25px;
-        display: block;
-        transition: background 1s ease;
-        &:hover {
-            background-color: $primaryColor;
-        }
-    
-        &:focus,
-        &:active{
-            background-color:$secondaryColor;
-        }
-    }
-}
-
-// Section - Question Styles 
 section {
     padding:75px 0;
 }
 
-.section--question {
-    display: flex;
-    .question-details,
-    .question-image {
+.hide {
+    display: none;
+}
+
+// Header Styles 
+
+header {
+    width:100%;
+    height:100vh;
+    background:url(../assets/header-image.png) 15% / contain no-repeat $white;
+}
+
+.header-content {
+    @include alignment(column, flex-end, flex-end, left);
+    .header-text {
         width:50%;
+        background-color: $white;
+        border:$border;
+        margin:50px;
+        padding:50px;
     }
 }
 
-.question-protein {
-    flex-direction: row-reverse;
-}
+// Section - Question Styles
 
-.question-cook-time {
-    flex-direction: row;
+.section--question {
+    display: flex;
+    .question-details, 
+    .question-image {
+        width: 50%;
+    }
 }
 
 .question-image {
+    width:100%;
     height:400px;
 }
 
@@ -85,8 +65,16 @@ section {
     background:url(../assets/kitchen-utensils.png) center /contain no-repeat $white;
 }
 
-// Form Styles
+.question-protein {
+    flex-direction: row-reverse;
+}
 
+.question-cook-time {
+    flex-direction: row;
+}
+
+
+// Form Styles
 fieldset {
     border: $border;
     @include alignment (column, center, center, center);
@@ -98,43 +86,21 @@ fieldset {
         }
     }
     label {
-        color:$white;
-        background-color:$black;
         width:75%;
         margin:10px 0 5px 0;
         padding:25px;
-        text-transform: uppercase;
-        &:hover {
+        @include colors ($white, $black);
+        &:hover,
+        &:focus {
             background-color:$primaryColor;
         }
-        &:focus,
         &:active{
             background-color:$secondaryColor;
         }
     }
 }
 
-// .section--submit {
-//     background:lightseagreen;
-//     display: flex;
-//     justify-content: center;
-//     align-items: center;
-// }
-
-.submit-form,
-.next {
-    text-transform: uppercase;
-    background-color:$white;
-    border: $border;
-    margin:10px 0;
-    padding: 10px 25px;
-    &:focus,
-    &:active,
-    &:hover {
-        color: $white;
-        background-color: $black;
-    }
-}
+// Submit Section Styles
 
 .submit-image {
     width:100%;
@@ -142,10 +108,13 @@ fieldset {
     background:url(../assets/pots-and-pans.png) center /contain no-repeat $white;
 }
 
-.submit-form{
-    width:100%;
-    padding:50px;
-    font-size:40px;
+// Recipe Results Section Styles 
+
+.result-recipe-image,
+.recipe-details,
+.recipe-title,
+.error-message {
+    border:$border;
 }
 
 .recipe-title,
@@ -153,36 +122,42 @@ fieldset {
     padding:25px 0;
     margin:20px 0;
     text-align: center;
-    border: $border;
 }
 
-
-.result-recipe {
-    display: flex;
-    flex-direction: row;
-    .recipe-image {
-        width: calc(50% - 15px);
-        margin-right:15px;
-    }  
+.user-input-recipe {
+    @include alignment(row, center, space-between, left);
     .recipe-details {
         width: 50%;
         padding:25px;
-        border:$border;
+        li {
+            margin: 5px 0;
+        }
     }
 }
 
-.hide {
-    display: none;
-}
-
-.error-restart {
-    color: $white;
-    background-color:$primaryColor;
-    display: inline-block;
-    padding:15px;
-    margin-top:25px;
-    &:hover {
-        background-color:$secondaryColor;
+.recipe-aside {
+    width: calc(50% - 15px);
+    margin-right:15px;
+    .recipe-background-image {
+        width:100%;
+        height:200px;
+        background:url(../assets/cheese-plate.png) center /contain no-repeat $white;
     }
+    .other-suggestions {
+        width:100%;
+        .social-links {
+            background-color: $primaryColor;
+            height:200px;
+        }
+    }
+}  
+
+// Footer Styles 
+
+footer {
+    color:$white;
+    text-align: center;
+    background-color: $secondaryColor;
+    
 }
 

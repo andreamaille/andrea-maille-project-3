@@ -12,3 +12,8 @@ $border: 4px solid $black;
     align-items: $align-items;
     text-align: $text-align;
 }
+
+@mixin colors ($color, $background-color) {
+    color:$color;
+    background-color:$background-color;
+}

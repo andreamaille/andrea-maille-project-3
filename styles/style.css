@@ -148,14 +148,14 @@ legend, button::-moz-focus-inner, input::-moz-focus-inner {
 html {
   font-size: 125%; }
 
+body {
+  font-size: 20px;
+  font-size: 1rem;
+  font-family: 'Lato', sans-serif; }
+
 a {
   color: #171814;
   text-decoration: none; }
-
-p,
-h2 {
-  margin: 0;
-  padding: 0; }
 
 h1 {
   font-size: 100px;
@@ -175,10 +175,28 @@ h2 {
   text-transform: capitalize;
   line-height: 1.2; }
 
-body {
-  font-size: 20px;
-  font-size: 1rem;
+p,
+h2 {
+  margin: 0;
+  padding: 0; }
+
+.submit-form,
+.next,
+.start-quiz,
+label {
+  text-transform: uppercase; }
+
+.submit-form {
+  font-size: 40px;
+  font-size: 2rem;
   font-family: 'Lato', sans-serif; }
+
+.aside-title {
+  font-size: 40px;
+  font-size: 2rem;
+  font-family: 'Abril Fatface', cursive;
+  color: #171814;
+  text-transform: capitalize; }
 
 .error-message p:first-child {
   font-size: 120px;
@@ -192,6 +210,59 @@ body {
   font-size: 1rem;
   font-family: 'Lato', sans-serif; }
 
+footer p {
+  font-size: 12px;
+  font-size: 0.6rem;
+  font-family: 'Lato', sans-serif;
+  color: #fefefe;
+  text-align: center; }
+
+.start-quiz {
+  text-align: center; }
+
+.start-quiz {
+  color: #fefefe;
+  background-color: #171814;
+  width: 35%;
+  padding: 15px;
+  margin-top: 25px;
+  display: block;
+  -webkit-transition: background 1s ease;
+  -o-transition: background 1s ease;
+  transition: background 1s ease; }
+  .start-quiz:hover {
+    background-color: #d0973e; }
+  .start-quiz:focus, .start-quiz:active {
+    background-color: #a05543; }
+
+.submit-form,
+.next {
+  background-color: #fefefe;
+  border: 4px solid #171814;
+  margin: 10px 0; }
+  .submit-form:focus, .submit-form:active, .submit-form:hover,
+  .next:focus,
+  .next:active,
+  .next:hover {
+    color: #fefefe;
+    background-color: #171814; }
+
+.submit-form {
+  width: 100%;
+  padding: 50px; }
+
+.next {
+  padding: 10px 25px; }
+
+.error-restart {
+  color: #fefefe;
+  background-color: #d0973e;
+  display: inline-block;
+  padding: 15px;
+  margin-top: 25px; }
+  .error-restart:hover {
+    background-color: #a05543; }
+
 .wrapper {
   width: 80%;
   max-width: 1440px;
@@ -201,42 +272,38 @@ img {
   width: 100%;
   max-width: 100%; }
 
+section {
+  padding: 75px 0; }
+
+.hide {
+  display: none; }
+
 header {
-  height: 100vh;
   width: 100%;
+  height: 100vh;
   background: url(../assets/header-image.png) 15%/contain no-repeat #fefefe; }
 
 .header-content {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
   -webkit-box-pack: end;
   -ms-flex-pack: end;
-  justify-content: flex-end; }
+  justify-content: flex-end;
+  -webkit-box-align: end;
+  -ms-flex-align: end;
+  align-items: flex-end;
+  text-align: left; }
   .header-content .header-text {
     width: 50%;
+    background-color: #fefefe;
+    border: 4px solid #171814;
     margin: 50px;
-    padding: 50px;
-    border: 4px solid #171814; }
-  .header-content .start-quiz {
-    color: #fefefe;
-    text-align: center;
-    text-transform: uppercase;
-    background-color: #171814;
-    width: 35%;
-    padding: 15px;
-    margin-top: 25px;
-    display: block;
-    -webkit-transition: background 1s ease;
-    -o-transition: background 1s ease;
-    transition: background 1s ease; }
-    .header-content .start-quiz:hover {
-      background-color: #d0973e; }
-    .header-content .start-quiz:focus, .header-content .start-quiz:active {
-      background-color: #a05543; }
-
-section {
-  padding: 75px 0; }
+    padding: 50px; }
 
 .section--question {
   display: -webkit-box;
@@ -245,6 +312,16 @@ section {
   .section--question .question-details,
   .section--question .question-image {
     width: 50%; }
+
+.question-image {
+  width: 100%;
+  height: 400px; }
+
+.protein-image {
+  background: url(../assets/pizza.png) center/contain no-repeat #fefefe; }
+
+.cook-time-image {
+  background: url(../assets/kitchen-utensils.png) center/contain no-repeat #fefefe; }
 
 .question-protein {
   -webkit-box-orient: horizontal;
@@ -257,15 +334,6 @@ section {
   -webkit-box-direction: normal;
   -ms-flex-direction: row;
   flex-direction: row; }
-
-.question-image {
-  height: 400px; }
-
-.protein-image {
-  background: url(../assets/pizza.png) center/contain no-repeat #fefefe; }
-
-.cook-time-image {
-  background: url(../assets/kitchen-utensils.png) center/contain no-repeat #fefefe; }
 
 fieldset {
   border: 4px solid #171814;
@@ -289,72 +357,68 @@ fieldset {
     fieldset input[type=radio]:checked + label {
       background-color: #a05543; }
   fieldset label {
-    color: #fefefe;
-    background-color: #171814;
     width: 75%;
     margin: 10px 0 5px 0;
     padding: 25px;
-    text-transform: uppercase; }
-    fieldset label:hover {
-      background-color: #d0973e; }
-    fieldset label:focus, fieldset label:active {
-      background-color: #a05543; }
-
-.submit-form,
-.next {
-  text-transform: uppercase;
-  background-color: #fefefe;
-  border: 4px solid #171814;
-  margin: 10px 0;
-  padding: 10px 25px; }
-  .submit-form:focus, .submit-form:active, .submit-form:hover,
-  .next:focus,
-  .next:active,
-  .next:hover {
     color: #fefefe;
     background-color: #171814; }
+    fieldset label:hover, fieldset label:focus {
+      background-color: #d0973e; }
+    fieldset label:active {
+      background-color: #a05543; }
 
 .submit-image {
   width: 100%;
   height: 400px;
   background: url(../assets/pots-and-pans.png) center/contain no-repeat #fefefe; }
 
-.submit-form {
-  width: 100%;
-  padding: 50px;
-  font-size: 40px; }
+.result-recipe-image,
+.recipe-details,
+.recipe-title,
+.error-message {
+  border: 4px solid #171814; }
 
 .recipe-title,
 .error-message {
   padding: 25px 0;
   margin: 20px 0;
-  text-align: center;
-  border: 4px solid #171814; }
+  text-align: center; }
 
-.result-recipe {
+.user-input-recipe {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
   -ms-flex-direction: row;
-  flex-direction: row; }
-  .result-recipe .recipe-image {
-    width: calc(50% - 15px);
-    margin-right: 15px; }
-  .result-recipe .recipe-details {
+  flex-direction: row;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: space-between;
+  -ms-flex-align: space-between;
+  align-items: space-between;
+  text-align: left; }
+  .user-input-recipe .recipe-details {
     width: 50%;
-    padding: 25px;
-    border: 4px solid #171814; }
+    padding: 25px; }
+    .user-input-recipe .recipe-details li {
+      margin: 5px 0; }
 
-.hide {
-  display: none; }
+.recipe-aside {
+  width: calc(50% - 15px);
+  margin-right: 15px; }
+  .recipe-aside .recipe-background-image {
+    width: 100%;
+    height: 200px;
+    background: url(../assets/cheese-plate.png) center/contain no-repeat #fefefe; }
+  .recipe-aside .other-suggestions {
+    width: 100%; }
+    .recipe-aside .other-suggestions .social-links {
+      background-color: #d0973e;
+      height: 200px; }
 
-.error-restart {
+footer {
   color: #fefefe;
-  background-color: #d0973e;
-  display: inline-block;
-  padding: 15px;
-  margin-top: 25px; }
-  .error-restart:hover {
-    background-color: #a05543; }
+  text-align: center;
+  background-color: #a05543; }

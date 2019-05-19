@@ -14,7 +14,7 @@
             <div class="header-content">
                 <div class="header-text">
                     <h1>What's for Dinner?</h1>
-                    <p>Hungry? Don't know what to make for dinner? Answer some questions below to get a tasty recipe for dinner!</p>
+                    <p>Hungry? Don't know what to make for dinner? Answer some questions below to get a tasty recipe!</p>
                     <a href="#question-protein" class="start-quiz">
                         Start Quiz
                     </a>
@@ -28,7 +28,7 @@
                 <div class="section--question question-protein">
                     <div class="question-image protein-image"></div>
                     <div class="question-details">
-                        <form action="">
+                        <form action="question-1" method="POST" name="contact">
                             <fieldset>
                                 <h2>Choose your protein:</h2>
                                 <input type="radio" name="protein" id="meat" value="meat">
@@ -36,7 +36,6 @@
         
                                 <input type="radio" name="protein" id="vegetarian" value="vegetarian">
                                 <label for="vegetarian">Vegetarian</label>
-        
                                 <input type="radio" name="protein" id="fish" value="fish">
                                 <label for="fish">Fish</label>
 
@@ -81,13 +80,27 @@
                 </div>
             </div>
         </section>
-        <img src="" alt="">
-        <!-- Result section will be dynamically added with JavaScript -->
-        <section id="user-recipe-result" class="section-recipe-results hide">
+        
+        <!-- //section-recipe-results -->
+        <!-- Result in this section will be dynamically added with JavaScript -->
+        <section id="user-results" class="section--user-results hide">
             <div class="wrapper">
                 <div class="recipe-title"></div>
-                <div class="result-recipe">
-                    <div class="recipe-image"></div>
+
+                <div class="user-input-recipe">
+
+                    <aside class="recipe-aside">
+                        <div class="recipe-image"></div>
+                        <div class="recipe-background-image"></div>
+                        
+                        <div class="other-suggestions">
+                            <p class="aside-title">Looking for more?</p>
+                            <div class="social-links">
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos laboriosam minima doloribus aliquid, pariatur mollitia.</p>
+                            </div>
+                        </div>
+                    </aside>
+                    
                     <div class="recipe-details">
                         <p>Ingredients</p>
                         <ul class="list-ingredients">
@@ -96,6 +109,7 @@
                         <div class="recipe-credit"></div>
                     </div>
                 </div>
+
                 <div class="error-message hide">
                     <p>Oh no!</p>
                     <p>It looks like you didn't answer a question. Please review your answers!</p>
@@ -103,10 +117,13 @@
                 </div>
             </div>
         </section>
-
-        
-        
     </main>
+
+    <footer>
+        <p><a href="http://www.andreacodes.com">andrea_codes </a>&copy; 2019</p>
+        <p>Illustrations by <a href="https://www.etsy.com/ca/shop/TWGDesigns">TWG Designs</a></p>
+    </footer>
+
 
     <script src='https://code.jquery.com/jquery-3.2.1.min.js' integrity='sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4='crossorigin='anonymous'></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-smooth-scroll/2.1.2/jquery.smooth-scroll.min.js"></script>
