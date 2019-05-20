@@ -16,7 +16,10 @@ html {
     font-family: 'Lato', sans-serif;
 }
 
-body {
+// General Font Styles
+
+body,
+p {
     @include bodyFont (20);
 }
 
@@ -25,10 +28,9 @@ a {
     text-decoration: none;
 }
 
-h1 {
-    @include mainFont (100);
-    line-height:1;
-    margin:25px 0;
+p,
+h2 {
+    margin:0;
     padding:0;
 }
 
@@ -37,11 +39,19 @@ h2 {
     line-height:1.2;
 }
 
-p,
-h2 {
-    margin:0;
+// Header Font Styles 
+h1 {
+    @include mainFont (100);
+    line-height:1;
+    margin:25px 0;
     padding:0;
 }
+
+.start-quiz {
+    text-align: center;
+}
+
+// Section Font Styles
 
 .submit-form,
 .next,
@@ -54,22 +64,19 @@ label {
     @include bodyFont (40); 
 }
 
-.aside-title {
-    @include mainFont (40);
-}
-
-.error-message  {
-    p:first-child {
-    @include mainFont (120);
-    }
-    p {
-    @include bodyFont (20); 
-    }
-}
-
 .read-more {
     text-decoration: underline;
 }
+
+.restart-title {
+    @include mainFont (40);
+}
+
+.error-message p:first-child {
+    @include mainFont (120);
+}
+
+// Footer Styles 
 
 footer p {
     @include bodyFont (12); 
@@ -77,9 +84,9 @@ footer p {
     text-align: center;
 }
 
-.start-quiz {
-    text-align: center;
-}
+
+
+
 
 // Media Queries 
 
@@ -96,12 +103,10 @@ footer p {
     h1 {
         @include mainFont (60);
     }
-
     .header-text p {
         @include bodyFont (18);
         margin:0 150px;
     }
-
     .recipe-credit p {
         @include bodyFont (16);
     }
@@ -110,27 +115,20 @@ footer p {
 
 @media (max-width:1000px) {
     .header-text p {
-        @include bodyFont (18);
         margin:0 50px;
-    }
-    
-    
-    
+    } 
 }
 
 @media (max-width:800px) {
     .header-text p {
         margin:10px 0;
     }
-
     h2 {
-    @include mainFont (30);
+        @include mainFont (30);
     }
-
     .submit-form{
-    @include bodyFont (25); 
+        @include bodyFont (25);
     }
-
     ul,
     ol {
         margin:0;
@@ -139,23 +137,19 @@ footer p {
     }
     li {
         @include bodyFont (16);
-
     }
-
     .error-message  {
         p:first-child {
             @include mainFont (80);
             line-height: 1;
         }
-
     }
 }
 
 @media (max-width:400px) {
     h1 {
         @include mainFont (45);
-    }
-    
+    } 
     .recipe-credit p {
         @include bodyFont (13);
     }

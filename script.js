@@ -1,7 +1,7 @@
 // Create app namespace to hold all methods
-
 const recipeApp = {};
-    // object holds all data for possible recipe suggestions
+
+    // Holds data for possible recipe suggestions
     recipeApp.recipeSuggestions = {
         meat: [
             {
@@ -285,92 +285,85 @@ const recipeApp = {};
         ]
     };
 
+    // Generates recipe based on user input
     recipeApp.displayRecipe = function() {
         $('.submit-form').on('click', function(event){
+            // prevents default behaviour of submit button
             event.preventDefault();
 
-            // stores the users protein choice
+            // stores user protein choice
             const protein = $('input[name=protein]:checked').val();
 
-            // store the users cook time choice 
+            // stores user cook time choice 
             const cookTime = $('input[name=cook-time]:checked').val();
-            // Error Handling - In the case, user does not complete the form
+
+
+            // If user does not complete form correctly, prints error message to page
             let answerAllQuestions = true;
             
             if (protein === undefined || cookTime === undefined){
                 answerAllQuestions = false;
-                $('.section--user-results').removeClass('hide');
-                $('.recipe-title').addClass('hide');
-                $('.recipe-aside').addClass('hide');
-                $('.recipe-details').addClass('hide');
-                $('.restart-quiz').addClass('hide');
-                $('.error-message').removeClass('hide');
+                $('.section--user-results, .error-message').removeClass('hide');
+                $('.recipe-title, .recipe-aside, .recipe-details, .restart-quiz,.skip-link').addClass('hide');
             }
-            
-            // When restart button is click, the page reloads and takes user back to first question.
+
+            // binds restart button to click event in order to reload quiz and take user back to first question 
             $('.restart').click(function () {
                 location.hash = '#question-protein';
                 location.reload(true);
             }); 
             
-            // User completes the form correctly, following function will run
+            // If user completes form correctly, prints recipe to page
             if (answerAllQuestions === true){
-                // stores recipe that matches user's preference
+                // stores recipe that matches user's selection
                 const userRecipes = [];
+
                 // stores user's preferred protein option
                 const preference = recipeApp.recipeSuggestions[protein];
-                // loops through user's preferred protein array and finds cook time that matches user's preference
+
+                // loops through selected protein array and stores cook time that matches user's selection
                 for (let i = 0; i < preference.length; i = i + 1) {
                     const store = preference[i];
                     if (store.cookTime === cookTime) {
                         userRecipes.push(store)
                     }
                 }
-
-                // Only one possible recipe option 
+                
+                // Stores first recipe in userRecipes array - there will be only one possible recipe that will match user's preferences
                 const recipe = userRecipes[0];
 
-                // print user's recipe to html
+                // Prints to page, the recipe details that are stored in recipe array
                 const $name = $(`<h2>${recipe.name}</h2>`);
                 // these images are purely decorative so no alt text is needed.
                 const $image = $(`<img class='result-recipe-image'>`).attr('src', recipe.image);
                 
-                const $recipeSource = $(`<p><a href="${recipe.recipeSource}" class="read-more">Learn more about this recipe</a></p>`);
+                const $recipeSource = $(`<p><a href="${recipe.recipeSource}" class="read-more">Read more about this recipe</a></p>`);
 
-                $('.recipe-title').empty();
+                // Clear any recipe details that may have been printed to the page previously before appending new recipe details
+                $('.recipe-title, .recipe-image, .recipe-credit, .list-ingredients, .recipe-directions').empty();
+
                 $('.recipe-title').append($name);
-
-                $('.recipe-image').empty();
                 $('.recipe-image').append($image);
-
-                $('.recipe-credit').empty();
                 $('.recipe-credit').append($recipeSource);
 
-                // printing arrays to the page
-
-                $('.list-ingredients').empty();
-
                 const recipeIngredients = recipe.ingredients;
-
                 recipeIngredients.forEach(ingredient => {
                     const $ingredient = $(`<li>${ingredient}</li>`);
                     $('.list-ingredients').append($ingredient);
                 })
 
-                $('.recipe-directions').empty();
-
                 const recipeDirections = recipe.directions;
-
                 recipeDirections.forEach(direction => {
                     const $direction = $(`<li>${direction}</li>`);
                     $('.recipe-directions').append($direction);
                 })
                 
+                // show section that contains recipe that matches user's preferences
                 $('.section--user-results').removeClass('hide');
             }
-            
         })
     }
+
     recipeApp.smoothScroll = function() {
         $('.start-quiz').smoothScroll({
             autoFocus: false,
@@ -379,6 +372,7 @@ const recipeApp = {};
         });
     },
     
+    // on click of buttons, page scrolls to specific id
     recipeApp.mainScroll = function() {
         const scrollDown = function (startPoint, EndPoint) {
             $(startPoint).on('click', function (event) {

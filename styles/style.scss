@@ -1,7 +1,6 @@
 @import "setup"; 
 @import "variables";
 @import "typography";
-@import "buttons";
 
 // General Styles 
 .wrapper {
@@ -21,6 +20,54 @@ section {
 
 .hide {
     display: none;
+}
+
+// Buttons and Link Styles
+.start-quiz {
+    @include colors ($white, $black);
+    width:35%;
+    padding:15px;
+    margin-top:25px;
+    display: block;
+    transition: background 1s ease;
+    &:hover {
+        background-color: $primaryColor;
+    }
+    &:focus,
+    &:active{
+        background-color:$secondaryColor;
+    }
+}
+
+.submit-form,
+.next {
+    background-color:$white;
+    border: $border;
+    margin:10px auto;
+    &:focus,
+    &:active,
+    &:hover {
+        @include colors ($white, $black);
+    }
+}
+
+.submit-form{
+    width:100%;
+    padding:50px;
+}
+
+.next {
+    padding: 10px 25px;
+}
+
+.restart {
+    @include colors ($white, $primaryColor);
+    display: inline-block;
+    padding:15px;
+    margin-top:25px;
+    &:hover {
+        background-color:$secondaryColor;
+    }
 }
 
 // Header Styles 
@@ -140,29 +187,30 @@ fieldset {
 .recipe-aside {
     width: calc(50% - 15px);
     margin-right:15px;
-    .recipe-credit {
-        background-color: $primaryColor;
-        padding:20px;
-        text-align: center;
-        a {
-            &:hover,
-            &:focus,
-            &:active {
-                color: $secondaryColor;
-            }
-        }
-    }
 }  
 
+.recipe-credit {
+    background-color: $primaryColor;
+    padding:20px;
+    text-align: center;
+    a {
+        &:hover,
+        &:focus,
+        &:active {
+            color: $secondaryColor;
+        }
+    }
+}
 
 // Footer Styles 
-
 footer {
     color:$white;
     text-align: center;
     background-color: $secondaryColor;
     
 }
+
+
 
 
 // Media Queries 
@@ -172,7 +220,6 @@ footer {
     header {
         background-position: center;
     }
-
     .header-content {
         height:100vh;
         @include alignment(column, center, center, center);
@@ -190,10 +237,10 @@ footer {
 }
 
 @media (max-width:1050px) {
+    // Section Styles
     section {
         padding:20px 0;
     }
-
     .section--question {
         flex-direction: column;
         .question-details, 
@@ -201,20 +248,20 @@ footer {
             width: 100%;
         }
     }
-
     .recipe-description {
         @include alignment(column, center, space-between, left);
-        .recipe-details {
-            width: 100%;
-            padding:10px;
-            li {
-                margin: 2px 0;
-            }
+        .recipe-details,
+        .recipe-aside {
+            width:100%;
         }
     }
-
+    .recipe-details {
+        padding:10px;
+        li {
+            margin: 2px 0;
+        }
+    }
     .recipe-aside {
-        width: 100%;
         margin-right:0;
         position: relative;
         .recipe-credit {
@@ -227,72 +274,56 @@ footer {
     }
 }
 
-
-
-
 @media (max-width:800px) {
-    .header-content {
-        .header-text {
-            text-align: left;
-        }
+    // Header Styles
+    .header-content .header-text {
+        text-align: left;
     }
-    
     .start-quiz {
         margin: 10px 0;
     }
-
-    fieldset {
-        label {
-            width: 90%;
-            padding:10px;
-        }
-        .next {
-            padding: 6px 25px;
-        }
+    // Form Styles
+    fieldset label {
+        width: 90%;
+        padding:10px;
+    }
+    .next {
+        padding: 6px 25px;
     }
 }
 
 @media (max-width:700px){
-    .recipe-aside  {
-        .recipe-credit {
-            width:70%;
-            right:5px;
-            bottom:5px;
-            padding:2px;
-            background-color: $black;
-            a {
+    // Section Styles
+    .recipe-aside .recipe-credit {
+        width:70%;
+        right:5px;
+        bottom:5px;
+        padding:2px;
+        background-color: $black;
+        a {
             color:$white;
-            }
         }
     }
 }
 
-
 @media (max-width:600px) {
-    .header-content {
-    .header-text {
-        text-align: left;
-            p{
-                margin:10px 0;
-        }
+    // Header Styles
+    .header-content .header-text p {
+        margin:10px 0;
     }
-    }
-
     .start-quiz {
         width:80%;
     }
-
+    // Section Styles 
     .question-image {
         height:250px;
     }
-
 }
 
 @media (max-width:400px) {
     header {
         background-size: cover;
     }
-
     .submit-form{
         padding:10px;
     }

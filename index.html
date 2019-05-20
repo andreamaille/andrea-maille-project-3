@@ -87,8 +87,10 @@
             <div class="wrapper">
                 <div class="user-input-recipe">
                     <div class="recipe-title"></div>
-
+                    <!-- Skip link if user is not interested in recipe to restart quiz-->
+                    <a href="#question-protein" class="visuallyHidden skip-link"> Skip to restarting the quiz for a different recipe selection</a>
                     <div class="recipe-description">
+
                         <aside class="recipe-aside">
                             <div class="recipe-image"></div>
                             <div class="recipe-credit"></div>
@@ -99,12 +101,11 @@
                             <ul class="list-ingredients">
                             </ul>
                             <ol class="recipe-directions"></ol>
-                            
                         </div>
                     </div>
 
                     <div class="restart-quiz">
-                        <p class="aside-title">Not feeling this recipe?</p>
+                        <p class="restart-title">Not feeling this recipe?</p>
                         <p>Try again and get something new!</p>
                         <a href="index.html#question-protein" class="restart">Restart Quiz</a>
                     </div>

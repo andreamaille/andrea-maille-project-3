@@ -119,14 +119,6 @@ legend, button::-moz-focus-inner, input::-moz-focus-inner {
   border: 0;
   padding: 0; }
 
-.clearfix:after {
-  visibility: hidden;
-  display: block;
-  font-size: 0;
-  content: '';
-  clear: both;
-  height: 0; }
-
 * {
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
@@ -148,7 +140,8 @@ legend, button::-moz-focus-inner, input::-moz-focus-inner {
 html {
   font-size: 125%; }
 
-body {
+body,
+p {
   font-size: 20px;
   font-size: 1rem;
   font-family: 'Lato', sans-serif; }
@@ -156,6 +149,19 @@ body {
 a {
   color: #171814;
   text-decoration: none; }
+
+p,
+h2 {
+  margin: 0;
+  padding: 0; }
+
+h2 {
+  font-size: 50px;
+  font-size: 2.5rem;
+  font-family: 'Abril Fatface', cursive;
+  color: #171814;
+  text-transform: capitalize;
+  line-height: 1.2; }
 
 h1 {
   font-size: 100px;
@@ -167,18 +173,8 @@ h1 {
   margin: 25px 0;
   padding: 0; }
 
-h2 {
-  font-size: 50px;
-  font-size: 2.5rem;
-  font-family: 'Abril Fatface', cursive;
-  color: #171814;
-  text-transform: capitalize;
-  line-height: 1.2; }
-
-p,
-h2 {
-  margin: 0;
-  padding: 0; }
+.start-quiz {
+  text-align: center; }
 
 .submit-form,
 .next,
@@ -191,7 +187,10 @@ label {
   font-size: 2rem;
   font-family: 'Lato', sans-serif; }
 
-.aside-title {
+.read-more {
+  text-decoration: underline; }
+
+.restart-title {
   font-size: 40px;
   font-size: 2rem;
   font-family: 'Abril Fatface', cursive;
@@ -205,22 +204,11 @@ label {
   color: #171814;
   text-transform: capitalize; }
 
-.error-message p {
-  font-size: 20px;
-  font-size: 1rem;
-  font-family: 'Lato', sans-serif; }
-
-.read-more {
-  text-decoration: underline; }
-
 footer p {
   font-size: 12px;
   font-size: 0.6rem;
   font-family: 'Lato', sans-serif;
   color: #171814;
-  text-align: center; }
-
-.start-quiz {
   text-align: center; }
 
 @media (max-width: 1350px) {
@@ -248,9 +236,6 @@ footer p {
 
 @media (max-width: 1000px) {
   .header-text p {
-    font-size: 18px;
-    font-size: 0.9rem;
-    font-family: 'Lato', sans-serif;
     margin: 0 50px; } }
 
 @media (max-width: 800px) {
@@ -295,6 +280,21 @@ footer p {
     font-size: 0.65rem;
     font-family: 'Lato', sans-serif; } }
 
+.wrapper {
+  width: 80%;
+  max-width: 1440px;
+  margin: 0 auto; }
+
+img {
+  width: 100%;
+  max-width: 100%; }
+
+section {
+  padding: 75px 0; }
+
+.hide {
+  display: none; }
+
 .start-quiz {
   color: #fefefe;
   background-color: #171814;
@@ -337,21 +337,6 @@ footer p {
   margin-top: 25px; }
   .restart:hover {
     background-color: #a05543; }
-
-.wrapper {
-  width: 80%;
-  max-width: 1440px;
-  margin: 0 auto; }
-
-img {
-  width: 100%;
-  max-width: 100%; }
-
-section {
-  padding: 75px 0; }
-
-.hide {
-  display: none; }
 
 header {
   width: 100%;
@@ -485,12 +470,13 @@ fieldset {
 .recipe-aside {
   width: calc(50% - 15px);
   margin-right: 15px; }
-  .recipe-aside .recipe-credit {
-    background-color: #d0973e;
-    padding: 20px;
-    text-align: center; }
-    .recipe-aside .recipe-credit a:hover, .recipe-aside .recipe-credit a:focus, .recipe-aside .recipe-credit a:active {
-      color: #a05543; }
+
+.recipe-credit {
+  background-color: #d0973e;
+  padding: 20px;
+  text-align: center; }
+  .recipe-credit a:hover, .recipe-credit a:focus, .recipe-credit a:active {
+    color: #a05543; }
 
 footer {
   color: #fefefe;
@@ -551,13 +537,14 @@ footer {
     -ms-flex-align: space-between;
     align-items: space-between;
     text-align: left; }
-    .recipe-description .recipe-details {
-      width: 100%;
-      padding: 10px; }
-      .recipe-description .recipe-details li {
-        margin: 2px 0; }
+    .recipe-description .recipe-details,
+    .recipe-description .recipe-aside {
+      width: 100%; }
+  .recipe-details {
+    padding: 10px; }
+    .recipe-details li {
+      margin: 2px 0; }
   .recipe-aside {
-    width: 100%;
     margin-right: 0;
     position: relative; }
     .recipe-aside .recipe-credit {
@@ -575,7 +562,7 @@ footer {
   fieldset label {
     width: 90%;
     padding: 10px; }
-  fieldset .next {
+  .next {
     padding: 6px 25px; } }
 
 @media (max-width: 700px) {
@@ -589,10 +576,8 @@ footer {
       color: #fefefe; } }
 
 @media (max-width: 600px) {
-  .header-content .header-text {
-    text-align: left; }
-    .header-content .header-text p {
-      margin: 10px 0; }
+  .header-content .header-text p {
+    margin: 10px 0; }
   .start-quiz {
     width: 80%; }
   .question-image {
