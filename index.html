@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>What's for Dinner?</title>
     <link href="https://fonts.googleapis.com/css?family=Abril+Fatface|Lato" rel="stylesheet">
+    <link type="image/png" href="assets/favicon.png" rel="icon">
     <link rel="stylesheet" href="styles/style.css">
 </head>
 <body>
@@ -36,17 +37,19 @@
         
                                 <input type="radio" name="protein" id="vegetarian" value="vegetarian">
                                 <label for="vegetarian">Vegetarian</label>
+
                                 <input type="radio" name="protein" id="fish" value="fish">
                                 <label for="fish">Fish</label>
 
-                                <input type="submit" name="next" id="next" value="next" class="next">
+                                <input type="submit" name="next-1" id="next" value="next" class="next">
+                                <label for="next" class="visuallyHidden">Next question</label>
                             </fieldset>
                         </form>
                     </div>
                 </div>
             </div>
         </section>
-    
+  
         <section id="question-2">
             <div class="wrapper">
                 <div class="section--question question-cook-time">
@@ -64,7 +67,8 @@
                                 <input type="radio" name="cook-time" id="long-cook-time" value="long-cook-time">
                                 <label for="long-cook-time">The longer the better!</label>
 
-                                <input type="submit" name="next2" id="next" value="next" class="next">
+                                <input type="submit" name="next-2" id="next" value="next" class="next">
+                                <label for="next" class="visuallyHidden">Next section</label>
                             </fieldset>
                         </form>
                     </div>
@@ -76,12 +80,12 @@
             <div class="wrapper">
                 <div class="section--submit">
                     <input type="submit" value="Make me Dinner!" name="submit-form" class="submit-form" id="submit-form">
+                    <label for="submit-form" class="visuallyHidden">Submit form</label>
                     <div class="submit-image"></div>
                 </div>
             </div>
         </section>
         
-        <!-- //section-recipe-results -->
         <!-- Result in this section will be dynamically added with JavaScript -->
         <section id="user-results" class="section--user-results hide">
             <div class="wrapper">
@@ -90,7 +94,6 @@
                     <!-- Skip link if user is not interested in recipe to restart quiz-->
                     <a href="#question-protein" class="visuallyHidden skip-link"> Skip to restarting the quiz for a different recipe selection</a>
                     <div class="recipe-description">
-
                         <aside class="recipe-aside">
                             <div class="recipe-image"></div>
                             <div class="recipe-credit"></div>
@@ -124,7 +127,6 @@
         <p><a href="http://www.andreacodes.com">andrea_codes </a>&copy; 2019</p>
         <p>Illustrations by <a href="https://www.etsy.com/ca/shop/TWGDesigns">TWG Designs</a></p>
     </footer>
-
 
     <script src='https://code.jquery.com/jquery-3.2.1.min.js' integrity='sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4='crossorigin='anonymous'></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-smooth-scroll/2.1.2/jquery.smooth-scroll.min.js"></script>

@@ -17,7 +17,6 @@ html {
 }
 
 // General Font Styles
-
 body,
 p {
     @include bodyFont (20);
@@ -83,9 +82,6 @@ footer p {
     color:$black;
     text-align: center;
 }
-
-
-
 
 
 // Media Queries 
@@ -154,4 +150,3 @@ footer p {
         @include bodyFont (13);
     }
 }
-

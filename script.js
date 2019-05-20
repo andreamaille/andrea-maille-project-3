@@ -339,7 +339,7 @@ const recipeApp = {};
                 
                 const $recipeSource = $(`<p><a href="${recipe.recipeSource}" class="read-more">Read more about this recipe</a></p>`);
 
-                // Clear any recipe details that may have been printed to the page previously before appending new recipe details
+                // Clears any recipe details that may have been printed to the page previously before appending new recipe details
                 $('.recipe-title, .recipe-image, .recipe-credit, .list-ingredients, .recipe-directions').empty();
 
                 $('.recipe-title').append($name);
@@ -358,7 +358,7 @@ const recipeApp = {};
                     $('.recipe-directions').append($direction);
                 })
                 
-                // show section that contains recipe that matches user's preferences
+                // show section that contains recipe details
                 $('.section--user-results').removeClass('hide');
             }
         })
@@ -382,8 +382,8 @@ const recipeApp = {};
                 }, 1000);
             })
         }
-        scrollDown(`input[name = "next"]`,`#question-2`);
-        scrollDown(`input[name = "next2"]`, `#submitAnswers`);
+        scrollDown(`input[name = "next-1"]`,`#question-2`);
+        scrollDown(`input[name = "next-2"]`, `#submitAnswers`);
         scrollDown(`input[name = "submit-form"]`, `#user-results`);
     },
 
@@ -392,8 +392,7 @@ const recipeApp = {};
         recipeApp.smoothScroll();
         recipeApp.mainScroll();
     }
-
+    
     $(function() {
         recipeApp.init();
     })
-
