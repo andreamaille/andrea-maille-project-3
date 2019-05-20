@@ -27,7 +27,7 @@
             <div class="wrapper">
                 <div class="section--question question-protein">
                     <div class="question-image protein-image"></div>
-                    <div class="question-details">
+                    <div  class="question-details">
                         <form action="question-1" method="POST" name="contact">
                             <fieldset>
                                 <h2>Choose your protein:</h2>
@@ -62,7 +62,7 @@
                                 <label for="around-an-hour">Around an Hour</label>
                     
                                 <input type="radio" name="cook-time" id="long-cook-time" value="long-cook-time">
-                                <label for="long-cook-time">All the time in the world</label>
+                                <label for="long-cook-time">The longer the better!</label>
 
                                 <input type="submit" name="next2" id="next" value="next" class="next">
                             </fieldset>
@@ -85,35 +85,35 @@
         <!-- Result in this section will be dynamically added with JavaScript -->
         <section id="user-results" class="section--user-results hide">
             <div class="wrapper">
-                <div class="recipe-title"></div>
-
                 <div class="user-input-recipe">
+                    <div class="recipe-title"></div>
 
-                    <aside class="recipe-aside">
-                        <div class="recipe-image"></div>
-                        <div class="recipe-background-image"></div>
+                    <div class="recipe-description">
+                        <aside class="recipe-aside">
+                            <div class="recipe-image"></div>
+                            <div class="recipe-credit"></div>
+                        </aside>
                         
-                        <div class="other-suggestions">
-                            <p class="aside-title">Looking for more?</p>
-                            <div class="social-links">
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos laboriosam minima doloribus aliquid, pariatur mollitia.</p>
-                            </div>
+                        <div class="recipe-details">
+                            <p>Ingredients</p>
+                            <ul class="list-ingredients">
+                            </ul>
+                            <ol class="recipe-directions"></ol>
+                            
                         </div>
-                    </aside>
-                    
-                    <div class="recipe-details">
-                        <p>Ingredients</p>
-                        <ul class="list-ingredients">
-                        </ul>
-                        <ol class="recipe-directions"></ol>
-                        <div class="recipe-credit"></div>
+                    </div>
+
+                    <div class="restart-quiz">
+                        <p class="aside-title">Not feeling this recipe?</p>
+                        <p>Try again and get something new!</p>
+                        <a href="index.html#question-protein" class="restart">Restart Quiz</a>
                     </div>
                 </div>
 
                 <div class="error-message hide">
                     <p>Oh no!</p>
                     <p>It looks like you didn't answer a question. Please review your answers!</p>
-                    <a href="index.html#question-protein" class="error-restart">Restart Quiz</a>
+                    <a href="index.html#question-protein" class="restart">Restart Quiz</a>
                 </div>
             </div>
         </section>

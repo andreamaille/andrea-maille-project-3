@@ -19,7 +19,7 @@
 .next {
     background-color:$white;
     border: $border;
-    margin:10px 0;
+    margin:10px auto;
     &:focus,
     &:active,
     &:hover {
@@ -36,7 +36,7 @@
     padding: 10px 25px;
 }
 
-.error-restart {
+.restart {
     @include colors ($white, $primaryColor);
     display: inline-block;
     padding:15px;
@@ -45,3 +45,4 @@
         background-color:$secondaryColor;
     }
 }
+

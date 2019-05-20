@@ -67,14 +67,97 @@ label {
     }
 }
 
-footer p {
-    @include bodyFont (12); 
-    color:$white;
-    text-align: center;
+.read-more {
+    text-decoration: underline;
 }
 
-
+footer p {
+    @include bodyFont (12); 
+    color:$black;
+    text-align: center;
+}
 
 .start-quiz {
     text-align: center;
 }
+
+// Media Queries 
+
+@media (max-width:1350px) {
+    h1 {
+        margin:10px 0;
+    }
+    .header-text {
+        text-align: center;
+    }
+}
+
+@media (max-width:1250px) {
+    h1 {
+        @include mainFont (60);
+    }
+
+    .header-text p {
+        @include bodyFont (18);
+        margin:0 150px;
+    }
+
+    .recipe-credit p {
+        @include bodyFont (16);
+    }
+    
+}
+
+@media (max-width:1000px) {
+    .header-text p {
+        @include bodyFont (18);
+        margin:0 50px;
+    }
+    
+    
+    
+}
+
+@media (max-width:800px) {
+    .header-text p {
+        margin:10px 0;
+    }
+
+    h2 {
+    @include mainFont (30);
+    }
+
+    .submit-form{
+    @include bodyFont (25); 
+    }
+
+    ul,
+    ol {
+        margin:0;
+        margin-left:5px;
+        padding:6px;
+    }
+    li {
+        @include bodyFont (16);
+
+    }
+
+    .error-message  {
+        p:first-child {
+            @include mainFont (80);
+            line-height: 1;
+        }
+
+    }
+}
+
+@media (max-width:400px) {
+    h1 {
+        @include mainFont (45);
+    }
+    
+    .recipe-credit p {
+        @include bodyFont (13);
+    }
+}
+

@@ -210,15 +210,90 @@ label {
   font-size: 1rem;
   font-family: 'Lato', sans-serif; }
 
+.read-more {
+  text-decoration: underline; }
+
 footer p {
   font-size: 12px;
   font-size: 0.6rem;
   font-family: 'Lato', sans-serif;
-  color: #fefefe;
+  color: #171814;
   text-align: center; }
 
 .start-quiz {
   text-align: center; }
+
+@media (max-width: 1350px) {
+  h1 {
+    margin: 10px 0; }
+  .header-text {
+    text-align: center; } }
+
+@media (max-width: 1250px) {
+  h1 {
+    font-size: 60px;
+    font-size: 3rem;
+    font-family: 'Abril Fatface', cursive;
+    color: #171814;
+    text-transform: capitalize; }
+  .header-text p {
+    font-size: 18px;
+    font-size: 0.9rem;
+    font-family: 'Lato', sans-serif;
+    margin: 0 150px; }
+  .recipe-credit p {
+    font-size: 16px;
+    font-size: 0.8rem;
+    font-family: 'Lato', sans-serif; } }
+
+@media (max-width: 1000px) {
+  .header-text p {
+    font-size: 18px;
+    font-size: 0.9rem;
+    font-family: 'Lato', sans-serif;
+    margin: 0 50px; } }
+
+@media (max-width: 800px) {
+  .header-text p {
+    margin: 10px 0; }
+  h2 {
+    font-size: 30px;
+    font-size: 1.5rem;
+    font-family: 'Abril Fatface', cursive;
+    color: #171814;
+    text-transform: capitalize; }
+  .submit-form {
+    font-size: 25px;
+    font-size: 1.25rem;
+    font-family: 'Lato', sans-serif; }
+  ul,
+  ol {
+    margin: 0;
+    margin-left: 5px;
+    padding: 6px; }
+  li {
+    font-size: 16px;
+    font-size: 0.8rem;
+    font-family: 'Lato', sans-serif; }
+  .error-message p:first-child {
+    font-size: 80px;
+    font-size: 4rem;
+    font-family: 'Abril Fatface', cursive;
+    color: #171814;
+    text-transform: capitalize;
+    line-height: 1; } }
+
+@media (max-width: 400px) {
+  h1 {
+    font-size: 45px;
+    font-size: 2.25rem;
+    font-family: 'Abril Fatface', cursive;
+    color: #171814;
+    text-transform: capitalize; }
+  .recipe-credit p {
+    font-size: 13px;
+    font-size: 0.65rem;
+    font-family: 'Lato', sans-serif; } }
 
 .start-quiz {
   color: #fefefe;
@@ -239,7 +314,7 @@ footer p {
 .next {
   background-color: #fefefe;
   border: 4px solid #171814;
-  margin: 10px 0; }
+  margin: 10px auto; }
   .submit-form:focus, .submit-form:active, .submit-form:hover,
   .next:focus,
   .next:active,
@@ -254,13 +329,13 @@ footer p {
 .next {
   padding: 10px 25px; }
 
-.error-restart {
+.restart {
   color: #fefefe;
   background-color: #d0973e;
   display: inline-block;
   padding: 15px;
   margin-top: 25px; }
-  .error-restart:hover {
+  .restart:hover {
     background-color: #a05543; }
 
 .wrapper {
@@ -358,7 +433,7 @@ fieldset {
       background-color: #a05543; }
   fieldset label {
     width: 75%;
-    margin: 10px 0 5px 0;
+    margin: 10px auto;
     padding: 25px;
     color: #fefefe;
     background-color: #171814; }
@@ -375,16 +450,18 @@ fieldset {
 .result-recipe-image,
 .recipe-details,
 .recipe-title,
-.error-message {
+.error-message,
+.restart-quiz {
   border: 4px solid #171814; }
 
 .recipe-title,
-.error-message {
+.error-message,
+.restart-quiz {
   padding: 25px 0;
   margin: 20px 0;
   text-align: center; }
 
-.user-input-recipe {
+.recipe-description {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -399,26 +476,130 @@ fieldset {
   -ms-flex-align: space-between;
   align-items: space-between;
   text-align: left; }
-  .user-input-recipe .recipe-details {
+  .recipe-description .recipe-details {
     width: 50%;
     padding: 25px; }
-    .user-input-recipe .recipe-details li {
+    .recipe-description .recipe-details li {
       margin: 5px 0; }
 
 .recipe-aside {
   width: calc(50% - 15px);
   margin-right: 15px; }
-  .recipe-aside .recipe-background-image {
-    width: 100%;
-    height: 200px;
-    background: url(../assets/cheese-plate.png) center/contain no-repeat #fefefe; }
-  .recipe-aside .other-suggestions {
-    width: 100%; }
-    .recipe-aside .other-suggestions .social-links {
-      background-color: #d0973e;
-      height: 200px; }
+  .recipe-aside .recipe-credit {
+    background-color: #d0973e;
+    padding: 20px;
+    text-align: center; }
+    .recipe-aside .recipe-credit a:hover, .recipe-aside .recipe-credit a:focus, .recipe-aside .recipe-credit a:active {
+      color: #a05543; }
 
 footer {
   color: #fefefe;
   text-align: center;
   background-color: #a05543; }
+
+@media (max-width: 1350px) {
+  header {
+    background-position: center; }
+  .header-content {
+    height: 100vh;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    text-align: center; }
+    .header-content .header-text {
+      width: 100%;
+      text-align: center;
+      background-color: rgba(255, 255, 255, 0.95);
+      margin-top: 175px;
+      padding: 30px; }
+  .start-quiz {
+    margin: 15px auto; } }
+
+@media (max-width: 1050px) {
+  section {
+    padding: 20px 0; }
+  .section--question {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column; }
+    .section--question .question-details,
+    .section--question .question-image {
+      width: 100%; }
+  .recipe-description {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: space-between;
+    -ms-flex-align: space-between;
+    align-items: space-between;
+    text-align: left; }
+    .recipe-description .recipe-details {
+      width: 100%;
+      padding: 10px; }
+      .recipe-description .recipe-details li {
+        margin: 2px 0; }
+  .recipe-aside {
+    width: 100%;
+    margin-right: 0;
+    position: relative; }
+    .recipe-aside .recipe-credit {
+      width: 50%;
+      position: absolute;
+      right: 10px;
+      bottom: 10px;
+      margin: 5px 0; } }
+
+@media (max-width: 800px) {
+  .header-content .header-text {
+    text-align: left; }
+  .start-quiz {
+    margin: 10px 0; }
+  fieldset label {
+    width: 90%;
+    padding: 10px; }
+  fieldset .next {
+    padding: 6px 25px; } }
+
+@media (max-width: 700px) {
+  .recipe-aside .recipe-credit {
+    width: 70%;
+    right: 5px;
+    bottom: 5px;
+    padding: 2px;
+    background-color: #171814; }
+    .recipe-aside .recipe-credit a {
+      color: #fefefe; } }
+
+@media (max-width: 600px) {
+  .header-content .header-text {
+    text-align: left; }
+    .header-content .header-text p {
+      margin: 10px 0; }
+  .start-quiz {
+    width: 80%; }
+  .question-image {
+    height: 250px; } }
+
+@media (max-width: 400px) {
+  header {
+    background-size: cover; }
+  .submit-form {
+    padding: 10px; } }
