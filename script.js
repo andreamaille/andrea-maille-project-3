@@ -163,7 +163,7 @@ const recipeApp = {};
             {
                 name: 'Brie and Broccoli Quiche',
                 cookTime: 'long-cook-time',
-                image: 'assets/vegetarian-pot-pie.jpg',
+                image: 'assets/veggie-quiche.jpg',
                 ingredients: [
                     '4 yellow onions, sliced',
                     '4 tablespoons (1/2 stick) salted butter',
