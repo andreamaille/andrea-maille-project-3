@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,14 +10,16 @@
     <link type="image/png" href="assets/favicon.png" rel="icon">
     <link rel="stylesheet" href="styles/style.css">
 </head>
+
 <body>
     <header>
         <div class="wrapper">
             <div class="header-content">
                 <div class="header-text">
-                    <h1>What's for Dinner?</h1>
-                    <p>Hungry? Don't know what to make for dinner? Answer some questions below to get a tasty recipe!</p>
-                    <a href="#question-protein" class="start-quiz">
+                    <h1 tabindex="1">What's for Dinner?</h1>
+                    <p tabindex="2">Hungry? Don't know what to make for dinner? Answer some questions below to get a
+                        tasty recipe!</p>
+                    <a href="#question-protein" class="start-quiz" tabindex="3">
                         Start Quiz
                     </a>
                 </div>
@@ -28,20 +31,24 @@
             <div class="wrapper">
                 <div class="section--question question-protein">
                     <div class="question-image protein-image"></div>
-                    <div  class="question-details">
+                    <div class="question-details">
                         <form action="question-1" method="POST" name="contact">
-                            <fieldset>
-                                <h2>Choose your protein:</h2>
-                                <input type="radio" name="protein" id="meat" value="meat">
+                            <fieldset tabindex="4">
+                                <h2 tabindex="5">Choose your protein:</h2>
+                                <legend class="visuallyHidden" tabindex="6">To make your selection, use the up and down
+                                    arrows for view
+                                    protein options and press tab to make your selection
+                                </legend>
+                                <input type="radio" name="protein" id="meat" value="meat" tabindex="7">
                                 <label for="meat" class="question-label">Meat</label>
-        
-                                <input type="radio" name="protein" id="vegetarian" value="vegetarian">
+
+                                <input type="radio" name="protein" id="vegetarian" value="vegetarian" tabindex="8">
                                 <label for="vegetarian">Vegetarian</label>
 
-                                <input type="radio" name="protein" id="fish" value="fish">
+                                <input type="radio" name="protein" id="fish" value="fish" tabindex="9">
                                 <label for="fish">Fish</label>
 
-                                <input type="submit" name="next-1" id="next" value="next" class="next">
+                                <input type="submit" name="next-1" id="next" value="next" class="next" tabindex="10">
                                 <label for="next" class="visuallyHidden">Next question</label>
                             </fieldset>
                         </form>
@@ -49,7 +56,7 @@
                 </div>
             </div>
         </section>
-  
+
         <section id="question-2">
             <div class="wrapper">
                 <div class="section--question question-cook-time">
@@ -57,17 +64,23 @@
                     <div class="question-details">
                         <form action="">
                             <fieldset>
-                                <h2>How long do you want to cook?</h2>
-                                <input type="radio" name="cook-time" id="under-30-minutes" value="under-30-minutes">
+                                <h2 tabindex="11">How long do you want to cook?</h2>
+                                <legend class="visuallyHidden" tabindex="12">To make your selection, use the up and down
+                                    arrows for view
+                                    cook time options and press tab to make your selection</legend>
+                                <input type="radio" name="cook-time" id="under-30-minutes" value="under-30-minutes"
+                                    tabindex="13">
                                 <label for="under-30-minutes">Under 30 Minutes</label>
-                    
-                                <input type="radio" name="cook-time" id="around-an-hour" value="around-an-hour">
+
+                                <input type="radio" name="cook-time" id="around-an-hour" value="around-an-hour"
+                                    tabindex="14">
                                 <label for="around-an-hour">Around an Hour</label>
-                    
-                                <input type="radio" name="cook-time" id="long-cook-time" value="long-cook-time">
+
+                                <input type="radio" name="cook-time" id="long-cook-time" value="long-cook-time"
+                                    tabindex="15">
                                 <label for="long-cook-time">The longer the better!</label>
 
-                                <input type="submit" name="next-2" id="next" value="next" class="next">
+                                <input type="submit" name="next-2" id="next" value="next" class="next" tabindex="16">
                                 <label for="next" class="visuallyHidden">Next section</label>
                             </fieldset>
                         </form>
@@ -79,45 +92,48 @@
         <section id="submitAnswers" class="submitAnswers">
             <div class="wrapper">
                 <div class="section--submit">
-                    <input type="submit" value="Make me Dinner!" name="submit-form" class="submit-form" id="submit-form">
+                    <input type="submit" value="Make me Dinner!" name="submit-form" class="submit-form" id="submit-form"
+                        tabindex="17">
                     <label for="submit-form" class="visuallyHidden">Submit form</label>
                     <div class="submit-image"></div>
                 </div>
             </div>
         </section>
-        
+
         <!-- Result in this section will be dynamically added with JavaScript -->
         <section id="user-results" class="section--user-results hide">
             <div class="wrapper">
                 <div class="user-input-recipe">
-                    <div class="recipe-title"></div>
+                    <div class="recipe-title" tabindex="18"></div>
                     <!-- Skip link if user is not interested in recipe to restart quiz-->
-                    <a href="#question-protein" class="visuallyHidden skip-link"> Skip to restarting the quiz for a different recipe selection</a>
+                    <a href="#question-protein" class="visuallyHidden skip-link" tabindex="19"> Skip to restarting the
+                        quiz for a
+                        different recipe selection</a>
                     <div class="recipe-description">
                         <aside class="recipe-aside">
                             <div class="recipe-image"></div>
-                            <div class="recipe-credit"></div>
+                            <div class="recipe-credit" tabindex="23"></div>
                         </aside>
-                        
+
                         <div class="recipe-details">
-                            <p>Ingredients</p>
-                            <ul class="list-ingredients">
+                            <p tabindex="20">Ingredients</p>
+                            <ul class="list-ingredients" tabindex="21">
                             </ul>
-                            <ol class="recipe-directions"></ol>
+                            <ol class="recipe-directions" tabindex="22"></ol>
                         </div>
                     </div>
 
                     <div class="restart-quiz">
-                        <p class="restart-title">Not feeling this recipe?</p>
-                        <p>Try again and get something new!</p>
-                        <a href="index.html#question-protein" class="restart">Restart Quiz</a>
+                        <p class="restart-title" tabindex="24">Not feeling this recipe?</p>
+                        <p tabindex="25">Try again and get something new!</p>
+                        <a href="index.html#question-protein" class="restart" tabindex="26">Restart Quiz</a>
                     </div>
                 </div>
 
                 <div class="error-message hide">
-                    <p>Oh no!</p>
-                    <p>It looks like you didn't answer a question. Please review your answers!</p>
-                    <a href="index.html#question-protein" class="restart">Restart Quiz</a>
+                    <p tabindex="17">Oh no!</p>
+                    <p tabindex="18">It looks like you didn't answer a question. Please review your answers!</p>
+                    <a href="index.html#question-protein" class="restart" tabindex="19">Restart Quiz</a>
                 </div>
             </div>
         </section>
@@ -128,8 +144,11 @@
         <p>Illustrations by <a href="https://www.etsy.com/ca/shop/TWGDesigns">TWG Designs</a></p>
     </footer>
 
-    <script src='https://code.jquery.com/jquery-3.2.1.min.js' integrity='sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4='crossorigin='anonymous'></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-smooth-scroll/2.1.2/jquery.smooth-scroll.min.js"></script>
+    <script src='https://code.jquery.com/jquery-3.2.1.min.js'
+        integrity='sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=' crossorigin='anonymous'></script>
+    <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/jquery-smooth-scroll/2.1.2/jquery.smooth-scroll.min.js"></script>
     <script src="script.js"></script>
 </body>
+
 </html>

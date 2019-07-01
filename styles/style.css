@@ -335,7 +335,7 @@ section {
   display: inline-block;
   padding: 15px;
   margin-top: 25px; }
-  .restart:hover {
+  .restart:hover, .restart:active, .restart:focus {
     background-color: #a05543; }
 
 header {
