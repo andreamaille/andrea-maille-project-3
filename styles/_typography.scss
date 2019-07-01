@@ -3,7 +3,6 @@ html {
 }
 
 @mixin mainFont ($sizeValue) {
-    font-size: $sizeValue * 1px;
     font-size: ($sizeValue/20) * 1rem;
     font-family: 'Abril Fatface', cursive;
     color:$black;
@@ -11,7 +10,6 @@ html {
 }
 
 @mixin bodyFont ($sizeValue) {
-    font-size: $sizeValue * 1px;
     font-size: ($sizeValue/20) * 1rem;
     font-family: 'Lato', sans-serif;
 }
